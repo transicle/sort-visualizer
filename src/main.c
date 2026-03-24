@@ -4,6 +4,11 @@
 
 #include "sorter.h"
 #include "bubble.h"
+#include "insertion.h"
+#include "selection.h"
+#include "quick.h"
+#include "merge.h"
+#include <string.h>
 
 int getch(void) {
     struct termios oldt, newt;
@@ -18,7 +23,11 @@ int getch(void) {
 }
 
 const char* algorithms[] = {
-    "Bubble Sort"
+    "Bubble Sort",
+    "Insertion Sort",
+    "Selection Sort",
+    "Quick Sort",
+    "Merge Sort"
 };
 
 void pmenu(int selected) {
@@ -76,6 +85,18 @@ int main() {
     switch(selected) {
         case 0:
             bubble_sort();
+            break;
+        case 1:
+            insertion_sort();
+            break;
+        case 2:
+            selection_sort();
+            break;
+        case 3:
+            quick_sort();
+            break;
+        case 4:
+            merge_sort();
             break;
     }
 
