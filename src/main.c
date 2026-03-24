@@ -8,6 +8,9 @@
 #include "selection.h"
 #include "quick.h"
 #include "merge.h"
+#include "heap.h"
+#include "shell.h"
+#include "radix.h"
 #include <string.h>
 
 int getch(void) {
@@ -27,7 +30,10 @@ const char* algorithms[] = {
     "Insertion Sort",
     "Selection Sort",
     "Quick Sort",
-    "Merge Sort"
+    "Merge Sort",
+    "Heap Sort",
+    "Shell Sort",
+    "Radix Sort"
 };
 
 void pmenu(int selected) {
@@ -97,6 +103,15 @@ int main() {
             break;
         case 4:
             merge_sort();
+            break;
+        case 5:
+            heap_sort();
+            break;
+        case 6:
+            shell_sort();
+            break;
+        case 7:
+            radix_sort();
             break;
     }
 
